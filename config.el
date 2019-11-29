@@ -8,19 +8,19 @@
  ;; this is on my laptop
  ((string-equal system-type "darwin")
   (progn
-    (setq synology-home-directory "/Users/gq/SynologyDrive/")
+    (setq synology-home-directory "~/SynologyDrive/")
     )
   )
  ;; this is on my server at my office
  ((string-equal system-type "gnu/linux")
   (progn
-    (setq synology-home-directory "/home/gq/SynologyDrive/")
+    (setq synology-home-directory "~/SynologyDrive/")
     )
   )
  ;; this is on my company laptop
  ((string-equal system-name "DESKTOP-O8CMASO")
   (progn
-    (setq synology-home-directory "c:/Users/310251319/SynologyDrive/")
+    (setq synology-home-directory (concat (getenv "HOME") "/SynologyDrive/"))
     )
   )
  ;; this is on other windows platforms
