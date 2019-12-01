@@ -10,6 +10,7 @@
   (progn
     (setq synology-home-directory "~/SynologyDrive/")
     (setq doom-font (font-spec :family "Inconsolata for Powerline"))
+    (toggle-frame-fullscreen)
     )
   )
  ;; this is on my server at my office
@@ -17,6 +18,7 @@
   (progn
     (setq synology-home-directory "~/SynologyDrive/")
     (setq doom-font (font-spec :family "Inconsolata for Powerline"))
+    (toggle-frame-fullscreen)
     )
   )
  ;; this is on my company laptop
@@ -24,6 +26,7 @@
   (progn
     (setq synology-home-directory (concat (getenv "HOME") "/SynologyDrive/"))
     (setq doom-font (font-spec :family "Inconsolata for Powerline"))
+    (toggle-frame-maximized)
     )
   )
  ;; this is on other windows platforms
@@ -31,6 +34,7 @@
   (progn
     (setq synology-home-directory "d:/SynologyDrive/")
     (setq doom-font (font-spec :family "Sarasa Mono SC"))
+    (toggle-frame-maximized)
     )
   )
  )
@@ -51,5 +55,3 @@
 (global-set-key (kbd "C-*") 'insert-zero-width-space)
 (global-set-key (kbd "<f12>") 'treemacs)
 
-(toggle-frame-maximized)
-(toggle-frame-fullscreen)
