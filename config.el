@@ -27,12 +27,10 @@
     )
   )
  ;; this is on other windows platforms
- ((string-equal system-name "MICRO-906032057")
+ ((string-equal system-type "windows-nt")
   (progn
     (setq synology-home-directory "d:/SynologyDrive/")
     (setq doom-font (font-spec :family "Sarasa Mono SC"))
-    (setenv "PATH" (concat "d:/texlive/2019/bin/win32;" (getenv "PATH")))
-    (add-to-list 'exec-path "d:/texlive/2019/bin/win32/")
     )
   )
  )
@@ -41,7 +39,7 @@
 (setq my-life-folder (concat synology-home-directory "Life/"))
 (setq my-study-folder (concat synology-home-directory "Study/"))
 (setq my-org-folder (concat synology-home-directory "Life/org/"))
-(setq org-latex-compiler "xelatex")
+
 (setq org-src-tab-acts-natively t)
 (setq org-default-notes-file (concat my-org-folder "agenda.org"))
 (setq org-agenda-files `(,my-org-folder))
@@ -54,3 +52,4 @@
 (global-set-key (kbd "<f12>") 'treemacs)
 
 (toggle-frame-maximized)
+(toggle-frame-fullscreen)
