@@ -9,24 +9,28 @@
  ((string-equal system-type "darwin")
   (progn
     (setq synology-home-directory "~/SynologyDrive/")
+    (setq doom-font (font-spec :family "Inconsolata for Powerline"))
     )
   )
  ;; this is on my server at my office
  ((string-equal system-type "gnu/linux")
   (progn
     (setq synology-home-directory "~/SynologyDrive/")
+    (setq doom-font (font-spec :family "Inconsolata for Powerline"))
     )
   )
  ;; this is on my company laptop
  ((string-equal system-name "DESKTOP-O8CMASO")
   (progn
     (setq synology-home-directory (concat (getenv "HOME") "/SynologyDrive/"))
+    (setq doom-font (font-spec :family "Inconsolata for Powerline"))
     )
   )
  ;; this is on other windows platforms
  ((string-equal system-type "windows-nt")
   (progn
     (setq synology-home-directory "d:/SynologyDrive/")
+    (setq doom-font (font-spec :family "Sarasa Mono SC"))
     )
   )
  )
@@ -40,11 +44,11 @@
 (setq org-default-notes-file (concat my-org-folder "agenda.org"))
 (setq org-agenda-files `(,my-org-folder))
 
-(setq doom-font (font-spec :family "Inconsolata for Powerline"))
-(dolist (charset '(kana han symbol cjk-misc bopomofo))
-  (set-fontset-font (frame-parameter nil 'font)
-                    charset (font-spec :family "Sarasa Mono SC")))
+(dolist (charset '(kana han symbol cjk-misc bopomofo iso-8859-1))
+  (set-fontset-font (frame-parameter nil 'font) charset (font-spec :family "Sarasa Mono SC")))
 
 (defun insert-zero-width-space () (interactive) (insert-char #x200b))
 (global-set-key (kbd "C-*") 'insert-zero-width-space)
 (global-set-key (kbd "<f12>") 'treemacs)
+
+(toggle-frame-maximized)
