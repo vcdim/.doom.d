@@ -30,10 +30,12 @@
     )
   )
  ;; this is on other windows platforms
- ((string-equal system-type "windows-nt")
+ ((string-equal system-name "MICRO-906032057")
   (progn
     (setq synology-home-directory "d:/SynologyDrive/")
     (setq doom-font (font-spec :family "Sarasa Mono SC"))
+    (add-to-list 'exec-path "d:/texlive/2019/bin/win32/")
+    (setenv "PATH" (concat "d:/texlive/2019/bin/win32;" (getenv "PATH")))
     (toggle-frame-maximized)
     )
   )
@@ -48,7 +50,7 @@
 (setq org-default-notes-file (concat my-org-folder "agenda.org"))
 (setq org-agenda-files `(,my-org-folder))
 
-(dolist (charset '(kana han symbol cjk-misc bopomofo iso-8859-1))
+(dolist (charset '(kana han symbol cjk-misc bopomofo))
   (set-fontset-font (frame-parameter nil 'font) charset (font-spec :family "Sarasa Mono SC")))
 
 (defun insert-zero-width-space () (interactive) (insert-char #x200b))
