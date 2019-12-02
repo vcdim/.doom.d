@@ -18,7 +18,7 @@
   (progn
     (setq synology-home-directory "~/SynologyDrive/")
     (setq doom-font (font-spec :family "Inconsolata for Powerline"))
-    (toggle-frame-fullscreen)
+    (toggle-frame-maximized)
     )
   )
  ;; this is on my company laptop
@@ -34,9 +34,9 @@
   (progn
     (setq synology-home-directory "d:/SynologyDrive/")
     (setq doom-font (font-spec :family "Sarasa Mono SC"))
+    (toggle-frame-maximized)
     (add-to-list 'exec-path "d:/texlive/2019/bin/win32/")
     (setenv "PATH" (concat "d:/texlive/2019/bin/win32;" (getenv "PATH")))
-    (toggle-frame-maximized)
     )
   )
  )
