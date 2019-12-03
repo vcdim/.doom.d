@@ -57,3 +57,12 @@
 (global-set-key (kbd "C-*") 'insert-zero-width-space)
 (global-set-key (kbd "<f12>") 'treemacs)
 
+(def-package! org-super-agenda
+  :init
+  (setq org-super-agenda-groups
+        '(
+          (:name "Today" :time-grid t :todo "TODAY")
+          (:name "Important" :priority "A")
+          ))
+  :config
+  (org-super-agenda-mode))
