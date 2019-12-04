@@ -29,6 +29,13 @@
     (toggle-frame-maximized)
     )
   )
+ ((string-equal system-name "USER-20160423BL")
+  (progn
+    (setq synology-home-directory "c:/Users/Administrator/SynologyDrive/")
+    (setq doom-font (font-spec :family "Inconsolata for Powerline"))
+    (toggle-frame-maximized)
+    )
+  )
  ;; this is on other windows platforms
  ((string-equal system-name "MICRO-906032057")
   (progn
@@ -63,3 +70,12 @@
 
 (global-set-key (kbd "<f12>") 'treemacs)
 
+(def-package! org-super-agenda
+  :init
+  (setq org-super-agenda-groups
+        '(
+          (:name "Today" :time-grid t :todo "TODAY")
+          (:name "Important" :priority "A")
+          ))
+  :config
+  (org-super-agenda-mode))
