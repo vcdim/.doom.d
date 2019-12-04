@@ -55,5 +55,11 @@
 
 (defun insert-zero-width-space () (interactive) (insert-char #x200b))
 (global-set-key (kbd "C-*") 'insert-zero-width-space)
+(defun my-filter-remove-u200b (text backend info)
+  "Remove zero width space character (U+200B) from TEXT."
+  (replace-regexp-in-string "\x200B" "" text))
+(add-to-list 'org-export-filter-plain-text-functions
+             'my-filter-remove-u200b)
+
 (global-set-key (kbd "<f12>") 'treemacs)
 
