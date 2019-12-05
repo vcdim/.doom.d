@@ -60,22 +60,12 @@
 (dolist (charset '(kana han symbol cjk-misc bopomofo))
   (set-fontset-font (frame-parameter nil 'font) charset (font-spec :family "Sarasa Mono SC")))
 
-(defun insert-zero-width-space () (interactive) (insert-char #x200b))
-(global-set-key (kbd "C-*") 'insert-zero-width-space)
-(defun my-filter-remove-u200b (text backend info)
-  "Remove zero width space character (U+200B) from TEXT."
-  (replace-regexp-in-string "\x200B" "" text))
-(add-to-list 'org-export-filter-plain-text-functions
-             'my-filter-remove-u200b)
+;; (defun insert-zero-width-space () (interactive) (insert-char #x200b))
+;; (global-set-key (kbd "C-*") 'insert-zero-width-space)
+;; (defun my-filter-remove-u200b (text backend info)
+;;   "Remove zero width space character (U+200B) from TEXT."
+;;   (replace-regexp-in-string "\x200B" "" text))
+;; (add-to-list 'org-export-filter-plain-text-functions
+;;              'my-filter-remove-u200b)
 
 (global-set-key (kbd "<f12>") 'treemacs)
-
-(def-package! org-super-agenda
-  :init
-  (setq org-super-agenda-groups
-        '(
-          (:name "Today" :time-grid t :todo "TODAY")
-          (:name "Important" :priority "A")
-          ))
-  :config
-  (org-super-agenda-mode))
