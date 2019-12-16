@@ -69,4 +69,4 @@
 ;;              'my-filter-remove-u200b)
 
 (global-set-key (kbd "<f12>") 'treemacs)
-(setq org-bullets-bullet-list '("✏" "§" "●" "▷"))
+(setq org-bullets-bullet-list '("✏" "§" "•" "▷"))
