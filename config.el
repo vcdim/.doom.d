@@ -68,6 +68,7 @@
 ;; (add-to-list 'org-export-filter-plain-text-functions
 ;;              'my-filter-remove-u200b)
 
+(doom-themes-neotree-config)
 (global-set-key (kbd "<f12>") 'treemacs)
 (setq doom-themes-treemacs-theme "doom-colors")
 (doom-themes-treemacs-config)
