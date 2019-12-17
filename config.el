@@ -69,4 +69,6 @@
 ;;              'my-filter-remove-u200b)
 
 (global-set-key (kbd "<f12>") 'treemacs)
+(setq doom-themes-treemacs-theme "doom-colors")
+(doom-themes-treemacs-config)
 (setq org-bullets-bullet-list '("✏" "§" "•" "▷"))
