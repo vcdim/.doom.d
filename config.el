@@ -70,6 +70,7 @@
 
 (doom-themes-neotree-config)
 (global-set-key (kbd "<f12>") 'treemacs)
+(global-set-key (kbd "<S-f12>") 'neotree-toggle)
 (setq doom-themes-treemacs-theme "doom-colors")
 (doom-themes-treemacs-config)
 (setq org-bullets-bullet-list '("✏" "§" "•" "▷"))
