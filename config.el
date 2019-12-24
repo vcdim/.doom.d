@@ -17,7 +17,7 @@
  ((string-equal system-type "gnu/linux")
   (progn
     (setq synology-home-directory "~/SynologyDrive/")
-    (setq doom-font (font-spec :family "Inconsolata for Powerline"))
+    (setq doom-font (font-spec :family "Sarasa Mono SC"))
     (toggle-frame-maximized)
     )
   )
