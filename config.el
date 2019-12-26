@@ -44,33 +44,34 @@
     (toggle-frame-maximized)
     (add-to-list 'exec-path "d:/texlive/2019/bin/win32/")
     (setenv "PATH" (concat "d:/texlive/2019/bin/win32;" (getenv "PATH")))
+    (add-hook 'org-mode-hook (lambda () (set (make-local-variable 'system-time-locale) "C")))
     )
   )
  )
 
-(setq my-work-folder (concat synology-home-directory "Work/"))
-(setq my-life-folder (concat synology-home-directory "Life/"))
-(setq my-study-folder (concat synology-home-directory "Study/"))
 (setq my-org-folder (concat synology-home-directory "Life/org/"))
 
 (setq org-src-tab-acts-natively t)
 (setq org-default-notes-file (concat my-org-folder "agenda.org"))
 (setq org-agenda-files `(,my-org-folder))
+(setq org-bullets-bullet-list '("✏" "§" "•" "▷"))
 
 (dolist (charset '(kana han symbol cjk-misc bopomofo))
   (set-fontset-font (frame-parameter nil 'font) charset (font-spec :family "Sarasa Mono SC")))
 
-;; (defun insert-zero-width-space () (interactive) (insert-char #x200b))
-;; (global-set-key (kbd "C-*") 'insert-zero-width-space)
-;; (defun my-filter-remove-u200b (text backend info)
-;;   "Remove zero width space character (U+200B) from TEXT."
-;;   (replace-regexp-in-string "\x200B" "" text))
-;; (add-to-list 'org-export-filter-plain-text-functions
-;;              'my-filter-remove-u200b)
-
+(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 (doom-themes-neotree-config)
-(global-set-key (kbd "<f12>") 'treemacs)
-(global-set-key (kbd "<S-f12>") 'neotree-toggle)
+
 (setq doom-themes-treemacs-theme "doom-colors")
 (doom-themes-treemacs-config)
-(setq org-bullets-bullet-list '("✏" "§" "•" "▷"))
+
+(defun insert-zero-width-space () (interactive) (insert-char #x200b))
+(defun my-latex-filter-zws (text backend info)
+  (when (org-export-derived-backend-p backend 'latex)
+    (replace-regexp-in-string "\x200B" "{}" text)))
+
+(eval-after-load 'ox '(add-to-list 'org-export-filter-body-functions 'my-latex-filter-zws))
+
+(global-set-key (kbd "<f12>") 'treemacs)
+(global-set-key (kbd "C-*") 'insert-zero-width-space)
+(global-set-key (kbd "<S-f12>") 'neotree-toggle)
