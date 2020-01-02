@@ -51,6 +51,8 @@
 
 (setq my-org-folder (concat synology-home-directory "Life/org/"))
 
+(setq org-log-done 'time)
+
 (setq org-src-tab-acts-natively t)
 (setq org-default-notes-file (concat my-org-folder "agenda.org"))
 (setq org-agenda-files `(,my-org-folder))
