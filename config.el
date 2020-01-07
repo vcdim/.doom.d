@@ -79,3 +79,5 @@
 (global-set-key (kbd "<S-f12>") 'neotree-toggle)
 (global-set-key (kbd "<C-M-right>") 'centaur-tabs-forward-tab)
 (global-set-key (kbd "<C-M-left>") 'centaur-tabs-backward-tab)
+
+(+global-word-wrap-mode)
