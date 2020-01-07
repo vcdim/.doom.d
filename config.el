@@ -26,6 +26,7 @@
   (progn
     (setq synology-home-directory (concat (getenv "HOME") "/SynologyDrive/"))
     (setq doom-font (font-spec :family "Inconsolata for Powerline"))
+    (setq centaur-tabs-modified-marker "⚫")
     (toggle-frame-maximized)
     )
   )
@@ -57,7 +58,6 @@
 (setq org-default-notes-file (concat my-org-folder "agenda.org"))
 (setq org-agenda-files `(,my-org-folder))
 (setq org-bullets-bullet-list '("✏" "§" "•" "▷"))
-
 (dolist (charset '(kana han symbol cjk-misc bopomofo))
   (set-fontset-font (frame-parameter nil 'font) charset (font-spec :family "Sarasa Mono SC")))
 
