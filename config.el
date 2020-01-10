@@ -26,6 +26,7 @@
   (progn
     (setq synology-home-directory (concat (getenv "HOME") "/SynologyDrive/"))
     (setq doom-font (font-spec :family "Inconsolata for Powerline"))
+    (setq centaur-tabs-modified-marker "⚫")
     (toggle-frame-maximized)
     )
   )
@@ -88,7 +89,6 @@
         ("\\subsection{%s}" . "\\subsection*{%s}")
         ("\\subsubsection{%s}" . "\\subsubsection*{%s}")))
       )
-
 
 (dolist (charset '(kana han symbol cjk-misc bopomofo))
   (set-fontset-font (frame-parameter nil 'font) charset (font-spec :family "Sarasa Mono SC")))
