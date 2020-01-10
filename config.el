@@ -53,10 +53,42 @@
 
 (setq org-log-done 'time)
 
+(setq org-latex-compiler "xelatex")
 (setq org-src-tab-acts-natively t)
 (setq org-default-notes-file (concat my-org-folder "agenda.org"))
 (setq org-agenda-files `(,my-org-folder))
 (setq org-bullets-bullet-list '("✏" "§" "•" "▷"))
+
+(setq org-latex-classes '(("beamer" "\\documentclass[presentation]{beamer}"
+        ("\\section{%s}" . "\\section*{%s}")
+        ("\\subsection{%s}" . "\\subsection*{%s}")
+        ("\\subsubsection{%s}" . "\\subsubsection*{%s}"))
+       ("ctexart" "\\documentclass[11pt]{ctexart}"
+        ("\\section{%s}" . "\\section*{%s}")
+        ("\\subsection{%s}" . "\\subsection*{%s}")
+        ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+        ("\\paragraph{%s}" . "\\paragraph*{%s}")
+        ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))
+       ("article" "\\documentclass[11pt]{article}"
+        ("\\section{%s}" . "\\section*{%s}")
+        ("\\subsection{%s}" . "\\subsection*{%s}")
+        ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+        ("\\paragraph{%s}" . "\\paragraph*{%s}")
+        ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))
+       ("report" "\\documentclass[11pt]{report}"
+        ("\\part{%s}" . "\\part*{%s}")
+        ("\\chapter{%s}" . "\\chapter*{%s}")
+        ("\\section{%s}" . "\\section*{%s}")
+        ("\\subsection{%s}" . "\\subsection*{%s}")
+        ("\\subsubsection{%s}" . "\\subsubsection*{%s}"))
+       ("book" "\\documentclass[11pt]{book}"
+        ("\\part{%s}" . "\\part*{%s}")
+        ("\\chapter{%s}" . "\\chapter*{%s}")
+        ("\\section{%s}" . "\\section*{%s}")
+        ("\\subsection{%s}" . "\\subsection*{%s}")
+        ("\\subsubsection{%s}" . "\\subsubsection*{%s}")))
+      )
+
 
 (dolist (charset '(kana han symbol cjk-misc bopomofo))
   (set-fontset-font (frame-parameter nil 'font) charset (font-spec :family "Sarasa Mono SC")))
