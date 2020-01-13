@@ -18,6 +18,7 @@
   (progn
     (setq synology-home-directory "~/SynologyDrive/")
     (setq doom-font (font-spec :family "Sarasa Mono SC"))
+    (setq centaur-tabs-modified-marker "⚫")
     (toggle-frame-maximized)
     )
   )
@@ -53,7 +54,6 @@
 (setq my-org-folder (concat synology-home-directory "Life/org/"))
 
 (setq org-log-done 'time)
-
 (setq org-latex-compiler "xelatex")
 (setq org-src-tab-acts-natively t)
 (setq org-default-notes-file (concat my-org-folder "agenda.org"))
