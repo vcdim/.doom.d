@@ -18,7 +18,7 @@
   (progn
     (setq synology-home-directory "~/SynologyDrive/")
     (setq doom-font (font-spec :family "Sarasa Mono SC"))
-    (setq centaur-tabs-modified-marker "⚫")
+    (setq centaur-tabs-modified-marker "•")
     (toggle-frame-maximized)
     )
   )
@@ -26,8 +26,8 @@
  ((string-equal system-name "DESKTOP-O8CMASO")
   (progn
     (setq synology-home-directory (concat (getenv "HOME") "/SynologyDrive/"))
-    (setq doom-font (font-spec :family "Inconsolata for Powerline"))
-    (setq centaur-tabs-modified-marker "⚫")
+    (setq doom-font (font-spec :family "Sarasa Mono SC"))
+    (setq centaur-tabs-modified-marker "•")
     (toggle-frame-maximized)
     )
   )
