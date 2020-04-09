@@ -121,5 +121,6 @@
 (global-set-key (kbd "<S-f12>") 'neotree-toggle)
 (global-set-key (kbd "<C-M-right>") 'centaur-tabs-forward-tab)
 (global-set-key (kbd "<C-M-left>") 'centaur-tabs-backward-tab)
-
+(global-set-key (kbd "<home>") 'beginning-of-line)
+(global-set-key (kbd "<end>") 'end-of-line)
 (setq-default fill-column 80)
