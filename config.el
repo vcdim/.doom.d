@@ -103,6 +103,30 @@
 ;; ----------------
 (setq doom-font (font-spec :family "Sarasa Mono SC"))
 
+;; -------------------
+;; doc-view resolution
+;; -------------------
+(setq doc-view-resolution 200)
+
+;; ------------------------------
+;; specific file-open application
+;; ------------------------------
+(setq org-file-apps
+      '(("\\.pdf::\\([[:digit:]]+\\)\\'" lambda
+        (_file link)
+        (org-pdfview-open link))
+       ("\\.pdf\\'" lambda
+        (_file link)
+        (org-pdfview-open link))
+       (directory . emacs)
+       (auto-mode . emacs)
+       ("\\.mm\\'" . default)
+       ("\\.x?html?\\'" . default)
+       ("\\.pptx?\\'" . system)
+       ("\\.docx?\\'" . system)
+       ("\\.xlsx?\\'" . system))
+      )
+
 ;; ---------------
 ;; sidebar configs
 ;; ---------------
