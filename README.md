@@ -1,5 +1,13 @@
 # An Extensible Cross Platform .doom.d Configuration
 
+## Install
+
+```bash
+rm -rf ~/.doom.d        # if necessary
+git clone https://github.com/vcdim/.doom.d.git ~/
+~/.emacs.d/bin/doom sync
+```
+
 ## Features
 1. SynologyDrive WebDAV + beorg + Aliyun (Intranet Penetration) + DoomEmacs =
    fast all platform (iPhone, macOS, Ubuntu, Windows) organizer
