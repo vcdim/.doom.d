@@ -2,6 +2,6 @@
 ;;; .doom.d/packages.el
 
 ;;; Examples:
-;; (package! some-package)
+(package! cnfonts)
 ;; (package! another-package :recipe (:host github :repo "username/repo"))
 ;; (package! builtin-package :disable t)
