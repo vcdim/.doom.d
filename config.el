@@ -102,6 +102,10 @@
 ;; chinese font fix
 ;; ----------------
 (cnfonts-enable)
+(setq cnfonts-personal-fontnames
+      '(("Victor Mono" "Sarasa Mono SC" "Cascadia Code")
+        ()
+        ()))
 ;; ----------
 ;; load theme
 ;; ----------
@@ -129,7 +133,6 @@
        ("\\.docx?\\'" . system)
        ("\\.xlsx?\\'" . system))
       )
-
 ;; ---------------
 ;; sidebar configs
 ;; ---------------
