@@ -103,11 +103,15 @@
 ;; ----------------
 ;; chinese font fix
 ;; ----------------
-(setq doom-font (font-spec :family "Sarasa Mono SC"))
-;; (setq doom-font (font-spec :family "JetBrains Mono" :size 24)
-;;       doom-big-font (font-spec :family "JetBrains Mono" :size 36)
-;;       doom-variable-pitch-font (font-spec :family "Overpass" :size 24))
-
+(cnfonts-enable)
+(setq cnfonts-personal-fontnames
+      '(("Victor Mono" "Sarasa Mono SC" "Cascadia Code")
+        ()
+        ()))
+;; ----------
+;; load theme
+;; ----------
+(load-theme 'doom-one-light t)
 ;; -------------------
 ;; doc-view resolution
 ;; -------------------
@@ -132,7 +136,6 @@
        ("\\.xlsx?\\'" . system)
        )
       )
-
 ;; ---------------
 ;; sidebar configs
 ;; ---------------
@@ -170,19 +173,28 @@
 (global-set-key (kbd "<C-M-left>") 'centaur-tabs-backward-tab)
 (global-set-key (kbd "<home>") 'beginning-of-line)
 (global-set-key (kbd "<end>") 'end-of-line)
+<<<<<<< HEAD
 
 ;; ------------
 ;; column width
 ;; ------------
 (setq-default fill-column 80)
 
+=======
+(global-set-key (kbd "M-=") 'cnfonts-increase-fontsize)
+(global-set-key (kbd "M--") 'cnfonts-decrease-fontsize)
+(global-set-key (kbd "s-=") 'cnfonts-increase-fontsize)
+(global-set-key (kbd "s--") 'cnfonts-decrease-fontsize)
+>>>>>>> f1f0a4f47a05e19b048495ba192e5a89c1a7359c
 
+(setq-default fill-column 80)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+<<<<<<< HEAD
  '(ansi-color-names-vector
    ["#252526" "#d02b61" "#60aa00" "#d08928" "#6c9ef8" "#b77fdb" "#00aa80" "#dddddd"])
  '(custom-safe-themes
@@ -218,9 +230,16 @@
     (cons 340 "#505050")
     (cons 360 "#505050")))
  '(vc-annotate-very-old-color nil))
+=======
+ )
+>>>>>>> f1f0a4f47a05e19b048495ba192e5a89c1a7359c
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+<<<<<<< HEAD
  '(default ((t (:family "Sarasa Mono SC" :foundry "nil" :slant normal :weight normal :height 200 :width normal)))))
+=======
+ )
+>>>>>>> f1f0a4f47a05e19b048495ba192e5a89c1a7359c

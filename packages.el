@@ -2,6 +2,7 @@
 ;;; .doom.d/packages.el
 
 ;;; Examples:
-;; (package! some-package)
+(package! cnfonts)
+(package! json-mode)
 ;; (package! another-package :recipe (:host github :repo "username/repo"))
 ;; (package! builtin-package :disable t)
