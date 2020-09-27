@@ -9,6 +9,7 @@
  ((string-equal system-type "darwin")
   (progn
     (setq synology-home-directory "~/SynologyDrive/")
+    (setenv "PATH" (concat "/Users/gq/software/flutter/bin:" (getenv "PATH")))
     (toggle-frame-fullscreen)
     )
   )
@@ -55,6 +56,7 @@
 (defun my-latex-filter-zws (text backend info)
   (when (org-export-derived-backend-p backend 'latex)
     (replace-regexp-in-string "\x200B" "{}" text)))
+
 
 ;; -----------------------
 ;; org mode specifications
@@ -131,7 +133,8 @@
        ("\\.x?html?\\'" . default)
        ("\\.pptx?\\'" . system)
        ("\\.docx?\\'" . system)
-       ("\\.xlsx?\\'" . system))
+       ("\\.xlsx?\\'" . system)
+       )
       )
 ;; ---------------
 ;; sidebar configs
@@ -143,16 +146,15 @@
 (setq doom-themes-treemacs-theme "doom-colors")
 (doom-themes-treemacs-config)
 
+;; ----------
+;; tex engine
+;; ----------
+(setq-default TeX-engine 'xetex)
+
 ;; ------------------
 ;; default major mode
 ;; ------------------
 (setq-default major-mode 'org-mode)
-
-;; --------
-;; org-roam
-;; --------
-(setq org-roam-directory "~/SynologyDrive/Study/roam")
-(add-hook 'after-init-hook 'org-roam-mode)
 
 ;; ---------
 ;; shortcuts
@@ -165,12 +167,17 @@
 (global-set-key (kbd "<C-M-left>") 'centaur-tabs-backward-tab)
 (global-set-key (kbd "<home>") 'beginning-of-line)
 (global-set-key (kbd "<end>") 'end-of-line)
+
+;; ------------
+;; column width
+;; ------------
+(setq-default fill-column 80)
+
 (global-set-key (kbd "M-=") 'cnfonts-increase-fontsize)
 (global-set-key (kbd "M--") 'cnfonts-decrease-fontsize)
 (global-set-key (kbd "s-=") 'cnfonts-increase-fontsize)
 (global-set-key (kbd "s--") 'cnfonts-decrease-fontsize)
 
-(setq-default fill-column 80)
 
 (exec-path-from-shell-initialize)
 
