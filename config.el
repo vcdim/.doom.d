@@ -56,15 +56,17 @@
 (defun my-latex-filter-zws (text backend info)
   (when (org-export-derived-backend-p backend 'latex)
     (replace-regexp-in-string "\x200B" "{}" text)))
-
-
 ;; -----------------------
 ;; org mode specifications
 ;; -----------------------
 (setq my-org-folder (concat synology-home-directory "Life/org/"))
+(setq org-directory my-org-folder)
+(setq org-default-notes-file (concat synology-home-directory "Life/org/agenda.org"))
+(setq +org-capture-todo-file (concat synology-home-directory "Life/org/agenda.org"))
+(setq +org-capture-notes-file (concat synology-home-directory "Life/org/agenda.org"))
+(setq +org-capture-journal-file (concat synology-home-directory "Life/org/journal.org"))
 (setq org-log-done 'time)
 (setq org-src-tab-acts-natively t)
-(setq org-default-notes-file (concat my-org-folder "agenda.org"))
 (setq org-agenda-files `(,my-org-folder))
 (setq org-bullets-bullet-list '("✏" "§" "•" "▷"))
 (setq org-html-checkbox-type 'html)
@@ -111,12 +113,11 @@
 ;; ----------
 ;; load theme
 ;; ----------
-(load-theme 'doom-one-light t)
+(load-theme 'doom-one t)
 ;; -------------------
 ;; doc-view resolution
 ;; -------------------
 (setq doc-view-resolution 200)
-
 ;; ------------------------------
 ;; specific file-open application
 ;; ------------------------------
@@ -145,17 +146,14 @@
 ;; treemacs
 (setq doom-themes-treemacs-theme "doom-colors")
 (doom-themes-treemacs-config)
-
 ;; ----------
 ;; tex engine
 ;; ----------
 (setq-default TeX-engine 'xetex)
-
 ;; ------------------
 ;; default major mode
 ;; ------------------
 (setq-default major-mode 'org-mode)
-
 ;; ---------
 ;; shortcuts
 ;; ---------
@@ -167,18 +165,20 @@
 (global-set-key (kbd "<C-M-left>") 'centaur-tabs-backward-tab)
 (global-set-key (kbd "<home>") 'beginning-of-line)
 (global-set-key (kbd "<end>") 'end-of-line)
-
 ;; ------------
 ;; column width
 ;; ------------
 (setq-default fill-column 80)
-
+;; -------
+;; cnfonts
+;; -------
 (global-set-key (kbd "M-=") 'cnfonts-increase-fontsize)
 (global-set-key (kbd "M--") 'cnfonts-decrease-fontsize)
 (global-set-key (kbd "s-=") 'cnfonts-increase-fontsize)
 (global-set-key (kbd "s--") 'cnfonts-decrease-fontsize)
-
-
+;; ----
+;; path
+;; ----
 (exec-path-from-shell-initialize)
 
 (custom-set-variables
