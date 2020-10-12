@@ -172,6 +172,8 @@
 ;; -------
 ;; cnfonts
 ;; -------
+(setq cnfonts-personal-fontnames '(()("KaiTi SC" "Kai")()))
+
 (global-set-key (kbd "M-=") 'cnfonts-increase-fontsize)
 (global-set-key (kbd "M--") 'cnfonts-decrease-fontsize)
 (global-set-key (kbd "s-=") 'cnfonts-increase-fontsize)
@@ -180,6 +182,7 @@
 ;; path
 ;; ----
 (exec-path-from-shell-initialize)
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
