@@ -108,7 +108,7 @@
 (cnfonts-enable)
 (setq cnfonts-personal-fontnames
       '(("Victor Mono" "Sarasa Mono SC" "Cascadia Code")
-        ()
+        ("Kai" "WenQuanYi Micro Hei Mono" "WenQuanYi Zen Hei Mono" "WenQuanYi Zen Hei")
         ()))
 ;; ----------
 ;; load theme
@@ -172,7 +172,6 @@
 ;; -------
 ;; cnfonts
 ;; -------
-(setq cnfonts-personal-fontnames '(()("KaiTi SC" "Kai")()))
 
 (global-set-key (kbd "M-=") 'cnfonts-increase-fontsize)
 (global-set-key (kbd "M--") 'cnfonts-decrease-fontsize)
@@ -189,6 +188,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(holiday-bahai-holidays nil)
+ '(holiday-hebrew-holidays nil)
+ '(holiday-islamic-holidays nil)
+ '(holiday-oriental-holidays nil)
+ '(holiday-christian-holidays nil)
  )
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
