@@ -101,6 +101,15 @@
         ("\\subsubsection{%s}" . "\\subsubsection*{%s}")))
       )
 (eval-after-load 'ox '(add-to-list 'org-export-filter-body-functions 'my-latex-filter-zws))
+;; --------
+;; org-roam
+;; --------
+(setq org-roam-dailies-capture-templates '(("d" "daily" plain (function org-roam-capture--get-point) ""
+    :immediate-finish t
+    :file-name "dailies/%<%Y-%m-%d>"
+    :head "#+TITLE: %<%Y-%m-%d>")))
+(setq org-roam-graph-viewer "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome")
+(setq org-roam-graph-exclude-matcher '("private" "dailies"))
 
 ;; ----------------
 ;; chinese font fix
@@ -132,9 +141,11 @@
        (auto-mode . emacs)
        ("\\.mm\\'" . default)
        ("\\.x?html?\\'" . default)
+       ("\\.pdf?\\'" . system)
        ("\\.pptx?\\'" . system)
        ("\\.docx?\\'" . system)
        ("\\.xlsx?\\'" . system)
+       ("\\.png?\\'" . system)
        )
       )
 ;; ---------------
@@ -181,6 +192,20 @@
 ;; path
 ;; ----
 (exec-path-from-shell-initialize)
+
+(use-package org-roam
+      :ensure t
+      :hook
+      (after-init . org-roam-mode)
+      :custom
+      (org-roam-directory (concat synology-home-directory "roam/"))
+      :bind (:map org-roam-mode-map
+              (("C-c n l" . org-roam)
+               ("C-c n f" . org-roam-find-file)
+               ("C-c n g" . org-roam-graph))
+              :map org-mode-map
+              (("C-c n i" . org-roam-insert))
+              (("C-c n I" . org-roam-insert-immediate))))
 
 
 (custom-set-variables
